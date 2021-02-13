@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;800&display=swap');
+
+
+/*
+.dark-palette{
+   --other-color: var(--dark-color);
+}
+*/
+:root{
+   --dark-color: #000;
+   --midle-dark-color: rgb(51, 51, 51);
+   --light-color: #555557;
+   --lighter-color: #c0c0c0;
+   --background-color: #e7e7e7;
+}
+
+body{
+   font-family: 'Open Sans', sans-serif;
+   color: var(--light-color);
+   background-color: var(--background-color);
+   line-height: 1.5;
+   min-width: 290px;/*Coincidira con el navbar. Los 10px restantes son para la bara de navegacion*/
+   scroll-behavior: smooth;
+}
+
+header{
+   color: var(--dark-color);
+   margin: 10px;
+   font-size: 1.8em;
+   text-align: center;  
+}
+
+a{
+   text-decoration: none;
+   cursor: pointer;
+   color: var(--midle-dark-color);
+}
+
+code {
+   display: block;
+   white-space: pre-line;/*ENTER para cada linea*/
+   background-color: #b8b8b8;
+   padding: 15px;
+   margin: 10px;
+   line-height: 2;
+   text-align: left;
+}
+
+/******* NAVBAR ****/
+
+#navbar{
+   background-color: var(--lighter-color);
+   position: fixed;
+   top: 0;
+   left: 0;
+   /*Esta propiedad permite que el contenido que tenga un elemento, no se vea comprometido cuando se haga un resize en la pantalla o si este es de otros dispositivos con diferentes tamaños
+   Mas de este tamanio el bloque no va a achicarse. Conviene para menor a 300px de celular
+   */
+   min-width: 290px;
+   height: 100%;
+   width: 300px;/*Siempre el del ancho de celular*/
+   border-right: solid;
+   border-color: var(--light-color);
+}
+
+#navbar ul{
+   height: 89%;
+   padding: 0;
+   overflow-x: hidden;
+   overflow-y: auto;
+}
+
+#navbar li{
+   color: var(--midle-dark-color);
+   border-top: 1px solid;
+   width: 100%;
+   /* position: relative; */
+}
+
+#navbar a{
+   display: block;
+   padding: 10px 30px;
+}
+
+/******* MAIN *****/
+
+#main-doc {
+   margin-left: 310px;
+   padding: 20px;
+}
+
+#main-doc header{
+   text-align: left;
+   margin: 0;
+}
+
+/******* SECTION ***/
+
+section article{
+   margin: 15px;
+}
+
+section li {
+   margin: 15px 0 0 20px;
+}
+
+/*************************** MEDIA QUERIES ****************/
+
+@media (max-width: 815px){
+
+   #navbar{
+      position: absolute;/* Para que cuando escrolee, no quede fijado en la pantalla*/
+      z-index: 1;
+      top: 0;
+      padding: 0;
+      max-height: 270px;
+      width: 100%;
+      border: none;
+      border-bottom: 2px solid;
+   }
+
+   #navbar ul{
+      height: 200px;
+   }
+
+   #main-doc{
+      position: relative;
+      margin-top: 270px;
+      margin-left: -10px;
+   }
+}
